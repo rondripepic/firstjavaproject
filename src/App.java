@@ -6,7 +6,6 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         int rng = random.nextInt(100);
-        System.out.println("Random number: " + rng);
         System.out.print("Enter your number: ");
         int usernumber = scanner.nextInt();
         while(usernumber != rng){
@@ -17,7 +16,11 @@ public class App {
                 System.out.println("You guessed it!");
                 scanner.close();
             } else {
-                System.out.println("You didn't guess it!");
+                if(usernumber < rng){
+                    System.out.println("Too low!");
+                } else {
+                    System.out.println("Too high!");
+                }
             }
         }
 
